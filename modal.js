@@ -1,9 +1,11 @@
-$(function () {
-  $('.start__btn').click(function () {
-    $('.modal').addClass('modal__active');
-  });
- 
-  $('.exit__btn').click(function () {
-    $('.modal').removeClass('modal__active');
-  });
-});
+const start = document.getElementById("start__btn");
+const modal = document.getElementById("main__modal");
+const closes = document.getElementById("exit__btn");
+
+start.onclick = function modact() {
+    modal.style.display = 'flex';
+};
+
+closes.onclick = function () {
+    modal.style.display = 'none';
+};
