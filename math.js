@@ -38,6 +38,7 @@ function btn() {
         let sum = +numberOne.value + +numberTwo.value;
         let summ = input.value;
         if (summ != sum) {
+            div.classList.remove('correct');
             div.classList.add('incorrect');
         } else {
             div.classList.remove('incorrect')
