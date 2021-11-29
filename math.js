@@ -24,29 +24,26 @@ function btn() {
     numberTwo.innerText = Math.floor(Math.random() * (101 - 1) + 1);
     next.addEventListener('click', btn, false);
 
-    document.getElementById('next').onclick = function sub() { //тут ловит
+    document.getElementById('next').onclick = function sub() {
+        const div = document.getElementById('div');
         const numberOne = document.getElementById('1');
         const numberTwo = document.getElementById('2');
         document.getElementById('1').value = document.getElementById('1').innerText;
         document.getElementById('2').value = document.getElementById('2').innerText;
 
-        const div = document.getElementById('div');
         const answer = [numberOne.value, ' + ' , numberTwo.value, ' = ' , input.value];
         const result = answer.reduce ((res, item) => res + item, '');
         div.innerText = result;
 
-        let sum = +numberOne.value + +numberTwo.value;
-        let summ = input.value;
-        if (summ != sum) {
-            div.classList.remove('correct');
+        const sum = +numberOne.value + +numberTwo.value;
+        const value = input.value;
+        if (sum != value) {
             div.classList.add('incorrect');
+            div.classList.remove('correct');
         } else {
-            div.classList.remove('incorrect')
             div.classList.add('correct');
+            div.classList.remove('incorrect')
         };
-
-        console.log(sum);
-        console.log(summ);
     };
 
     document.getElementById('input').value = '';
