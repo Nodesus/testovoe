@@ -25,19 +25,30 @@
     text-transform: uppercase;
 }
 
-.start__btn:hover {
+.start__btn:hover,
+.exit__btn:hover,
+.next__btn:hover,
+.yes__btn:hover,
+.no__btn:hover {
     color: black;
     background-color: rgb(150, 150, 150);
     border: 1px solid rgb(0, 0, 0);
 }
 
 .exit__btn,
-.next__btn {
+.next__btn,
+.yes__btn,
+.no__btn {
     position: relative;
     color: #fff;
 }
 
-.exit__btn {
+.yes__btn {
+    margin-right: 3rem !important;
+}
+
+.exit__btn,
+.yes__btn {
     margin-right: 4rem;
 }
 
@@ -57,6 +68,10 @@
     padding: 60px 15px;
 }
 
+.second__modal {
+    display: none;
+}
+
 .modal__content {
     top: 30%;
     width: 100%;
@@ -66,6 +81,16 @@
     border-radius: 3px;
     position: relative;
     box-shadow: 0 5px 15px black;
+}
+
+.modal__content-second {
+    top: 38%;
+}
+
+.modal__content-second .p {
+    margin: 0 auto;
+    top: -27px;
+    position: relative;
 }
 
 .modal__title {

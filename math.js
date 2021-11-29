@@ -9,7 +9,7 @@ window.onload = function () {
         numberTwo.innerHTML = Math.floor(Math.random() * (101 - 1) + 1);
     };
 
-    const input = document.getElementById("input");
+    const input = document.getElementById('input');
     if (input.value == '') {
         next.classList.add('non-active');
     };
@@ -18,18 +18,18 @@ window.onload = function () {
 function btn() {
     const numberOne = document.getElementById('1');
     const numberTwo = document.getElementById('2');
-    const next = document.getElementById("next");
-    const input = document.getElementById("input");
+    const next = document.getElementById('next');
+    const input = document.getElementById('input');
     numberOne.innerHTML = Math.floor(Math.random() * (101 - 1) + 1);
     numberTwo.innerHTML = Math.floor(Math.random() * (101 - 1) + 1);
-    next.addEventListener("click", btn, false);
+    next.addEventListener('click', btn, false);
 
-    document.getElementById("next").onclick = function sub() {
-        const div = document.getElementById("div");
+    document.getElementById('next').onclick = function sub() {
+        const div = document.getElementById('div');
         div.innerHTML = input.value;
     };
 
-    document.getElementById("input").value = '';
+    document.getElementById('input').value = '';
 
     if (input.value == '') {
         next.classList.add('non-active');
@@ -37,8 +37,8 @@ function btn() {
 };
 
 function input() {
-    const next = document.getElementById("next");
-    const input = document.getElementById("input");
+    const next = document.getElementById('next');
+    const input = document.getElementById('input');
 
     if (typeof input.innerHTML !== 'undefined') {
         next.classList.remove('non-active');
