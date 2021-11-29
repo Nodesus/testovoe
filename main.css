@@ -85,9 +85,11 @@
 
 .modal__content-second {
     top: 38%;
+    max-width: 300px;
+    max-height: 60px;
 }
 
-.modal__content-second .p {
+.modal__content-second p {
     margin: 0 auto;
     top: -27px;
     position: relative;
