@@ -122,3 +122,11 @@
 .div {
     color: #fff;
 }
+
+.incorrect {
+    color: red;
+}
+
+.correct {
+    color: rgb(0, 255, 0);
+}

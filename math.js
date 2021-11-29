@@ -25,13 +25,27 @@ function btn() {
     next.addEventListener('click', btn, false);
 
     document.getElementById('next').onclick = function sub() { //тут ловит
-        document.getElementById('1').value = document.getElementById('1').innerHTML;
-        document.getElementById('2').value = document.getElementById('2').innerHTML;
-        
+        const numberOne = document.getElementById('1');
+        const numberTwo = document.getElementById('2');
+        document.getElementById('1').value = document.getElementById('1').innerText;
+        document.getElementById('2').value = document.getElementById('2').innerText;
+
         const div = document.getElementById('div');
-        const answer = [numberOne.value, ' + ' , numberTwo.value, ' = ' , input.value]
-        const result = answer.reduce ((res, item) => res + item, '')
+        const answer = [numberOne.value, ' + ' , numberTwo.value, ' = ' , input.value];
+        const result = answer.reduce ((res, item) => res + item, '');
         div.innerText = result;
+
+        let sum = +numberOne.value + +numberTwo.value;
+        let summ = input.value;
+        if (summ != sum) {
+            div.classList.add('incorrect');
+        } else {
+            div.classList.remove('incorrect')
+            div.classList.add('correct');
+        };
+
+        console.log(sum);
+        console.log(summ);
     };
 
     document.getElementById('input').value = '';
