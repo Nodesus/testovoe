@@ -11,37 +11,46 @@
 </head>
 
 <body>
-    <div class="start__container">
-        <div id="start__btn" class="btn start__btn" onclick="modact()">
-            Начать тест
-        </div>
-    </div>
-
-    <div id="main__modal" class="modal main__modal">
-        <div class="modal__content">
-            <p class="modal__title">Чему равна сумма чисел?</p>
-            <div id="math" class="math">
-                <span id="1"></span>
-                <span>+</span>
-                <span id="2"></span>
-                <input autocomplete="off" onchange="input()" type="number" name="sum" id="input" class="input">
+    <div class="wrapper">
+        <div class="start__container">
+            <div id="start__btn" class="btn start__btn" onclick="modact()">
+                Начать тест
             </div>
-            <button id="exit__btn" class="btn exit__btn">
-                Завершить
-            </button>
-            <button onclick="btn()" id="next" class="btn next__btn">
-                Продолжить
-            </button>
         </div>
-        <div id="div" class="div">123</div>
-    </div>
 
-    <div id="second__modal" class="modal main__modal second__modal">
-        <div class="modal__content modal__content-second">
-            <p>Вы уверены, что хотите завершить тестирование?</p>
-            <button id="yes__btn" class="btn yes__btn">Да</button>
-            <button id="no__btn" class="btn no__btn">Нет</button>
+        <div id="main__modal" class="modal main__modal">
+            <div class="modal__content">
+                <p class="modal__title">Чему равна сумма чисел?</p>
+                <div id="math" class="math">
+                    <span id="1"></span>
+                    <span>+</span>
+                    <span id="2"></span>
+                    <input autocomplete="off" onchange="input()" type="number" name="sum" id="input" class="input">
+                </div>
+                <button id="exit__btn" class="btn exit__btn">
+                    Завершить
+                </button>
+                <button onclick="btn()" id="next" class="btn next__btn">
+                    Продолжить
+                </button>
+            </div>
+            <div id="div" class="div"></div>
         </div>
+
+        <div id="second__modal" class="modal main__modal second__modal">
+            <div class="modal__content modal__content-second">
+                <p>Вы уверены, что хотите завершить тестирование?</p>
+                <button id="yes__btn" class="btn yes__btn">Да</button>
+                <button id="no__btn" class="btn no__btn">Нет</button>
+            </div>
+        </div>
+
+        <div class="result">
+            <ul id="answers" class="answers">
+                <li class="answers__item"><span id="answer__number-one"></span>+<span id="answer__number-two"></span>=<span id="answer__number-three"></span></li>
+            </ul>
+        </div>
+
     </div>
 </body>
 
