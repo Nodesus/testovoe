@@ -60,6 +60,11 @@ function btn() {
     if (input.value === '') {
         next.classList.add('non-active');
     };
+
+    const value_count1 = document.getElementById('value1');
+    value_count1.innerText = document.getElementsByClassName('correct').length;
+    const value_count2 = document.getElementById('value2');
+    value_count2.innerText = document.getElementsByClassName('incorrect').length;
 };
 
 function input() {
@@ -73,3 +78,4 @@ function input() {
         next.classList.add('non-active');
     };
 };
+
