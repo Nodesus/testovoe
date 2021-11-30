@@ -24,25 +24,36 @@ function btn() {
     numberTwo.innerText = Math.floor(Math.random() * (101 - 1) + 1);
     next.addEventListener('click', btn, false);
 
-    document.getElementById('next').onclick = function sub() {
-        const div = document.getElementById('div');
+    document.getElementById('next').onclick = function () {
         const numberOne = document.getElementById('1');
         const numberTwo = document.getElementById('2');
         document.getElementById('1').value = document.getElementById('1').innerText;
         document.getElementById('2').value = document.getElementById('2').innerText;
 
-        const answer = [numberOne.value, ' + ' , numberTwo.value, ' = ' , input.value];
-        const result = answer.reduce ((res, item) => res + item, '');
-        div.innerText = result;
+        const answer = [numberOne.value, ' + ', numberTwo.value, ' = ', input.value];
+        const result = answer.reduce((res, item) => res + item, '');
+
+        const li = document.getElementById('li');
+
+
+        const parent = document.getElementById('answers');
+        const addLi = document.createElement('li');
+        addLi.setAttribute('class', 'answer__item');
+        addLi.setAttribute('id', 'li');
+        parent.appendChild(addLi);
+        li.insertAdjacentText("beforeend", result);
+
+        const ol = document.getElementById('text');
+        ol.style.display = 'none';
 
         const sum = +numberOne.value + +numberTwo.value;
         const value = input.value;
         if (sum != value) {
-            div.classList.add('incorrect');
-            div.classList.remove('correct');
+            li.classList.add('incorrect');
+            li.classList.remove('correct');
         } else {
-            div.classList.add('correct');
-            div.classList.remove('incorrect')
+            li.classList.add('correct');
+            li.classList.remove('incorrect')
         };
     };
 

@@ -130,3 +130,8 @@
 .correct {
     color: rgb(0, 255, 0);
 }
+
+.answer__item {
+    content: "\a";
+  white-space: pre;
+}
