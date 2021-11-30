@@ -33,18 +33,16 @@ function btn() {
         const answer = [numberOne.value, ' + ', numberTwo.value, ' = ', input.value];
         const result = answer.reduce((res, item) => res + item, '');
 
-        const li = document.getElementById('li');
+        const ol = document.getElementById('ol');
+        const fragment = document.createDocumentFragment();
+        const li = document.createElement('li');
 
+        if(result !== 'undefined') {
+            li.textContent = result;
+            fragment.appendChild(li);
+        };
 
-        const parent = document.getElementById('answers');
-        const addLi = document.createElement('li');
-        addLi.setAttribute('class', 'answer__item');
-        addLi.setAttribute('id', 'li');
-        parent.appendChild(addLi);
-        li.insertAdjacentText("beforeend", result);
-
-        const ol = document.getElementById('text');
-        ol.style.display = 'none';
+        ol.appendChild(fragment);
 
         const sum = +numberOne.value + +numberTwo.value;
         const value = input.value;

@@ -11,9 +11,10 @@ start.onclick = function modact() {
 
 choose.onclick = function () {
     second_modal.style.display = 'flex';
+    
 };
 
-yes.onclick = function end() { //тут надо будет поправить, чтобы переводило на список//
+yes.onclick = function end() {
     modal.style.display = 'none';
     second_modal.style.display = 'none';
 };
