@@ -1,81 +1,73 @@
-window.onload = function () {
-    const numberOne = document.getElementById('1');
-    if (typeof numberOne.innerText !== 'undefined') {
-        numberOne.innerText = Math.floor(Math.random() * (101 - 1) + 1);
+const firstNum = document.getElementById('firstNum');
+const secondNum = document.getElementById('secondNum');
+const input = document.getElementById('input');
+const next = document.getElementById('next');
+const firstValueNum = document.getElementById('firstValueNum');
+const secondValueNum = document.getElementById('secondValueNum');
+
+next.addEventListener('click', btn, false);
+
+firstNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
+secondNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
+
+if (input.value === '') {
+    next.classList.add('non-active');
+};
+
+document.getElementById('next').onclick = function () {
+    firstNum.value = firstNum.innerText;
+    secondNum.value = secondNum.innerText;
+
+    let answer = [firstNum.value, ' + ', secondNum.value, ' = ', input.value];
+    let result = answer.reduce((res, item) => res + item, '');
+
+    let answers = document.getElementById('answers');
+    let fragment = document.createDocumentFragment();
+    let li = document.createElement('li');
+
+    if (result !== 'undefined') {
+        li.textContent = result;
+        fragment.appendChild(li);
     };
 
-    const numberTwo = document.getElementById('2');
-    if (typeof numberTwo.innerText !== 'undefined') {
-        numberTwo.innerText = Math.floor(Math.random() * (101 - 1) + 1);
-    };
+    answers.appendChild(fragment);
 
-    const input = document.getElementById('input');
-    if (input.value === '') {
-        next.classList.add('non-active');
+    let sum = +firstNum.value + +secondNum.value;
+    let value = input.value;
+
+    if (sum != value) {
+        li.classList.add('incorrect');
+        li.classList.remove('correct');
+    } else {
+        li.classList.add('correct');
+        li.classList.remove('incorrect')
     };
 };
 
 function btn() {
-    const numberOne = document.getElementById('1');
-    const numberTwo = document.getElementById('2');
-    const next = document.getElementById('next');
-    const input = document.getElementById('input');
-    numberOne.innerText = Math.floor(Math.random() * (101 - 1) + 1);
-    numberTwo.innerText = Math.floor(Math.random() * (101 - 1) + 1);
-    next.addEventListener('click', btn, false);
+    firstNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
+    secondNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
 
-    document.getElementById('next').onclick = function () {
-        const numberOne = document.getElementById('1');
-        const numberTwo = document.getElementById('2');
-        document.getElementById('1').value = document.getElementById('1').innerText;
-        document.getElementById('2').value = document.getElementById('2').innerText;
+    firstValueNum.innerText = document.getElementsByClassName('correct').length;
+    secondValueNum.innerText = document.getElementsByClassName('incorrect').length;
 
-        const answer = [numberOne.value, ' + ', numberTwo.value, ' = ', input.value];
-        const result = answer.reduce((res, item) => res + item, '');
-
-        const ol = document.getElementById('ol');
-        const fragment = document.createDocumentFragment();
-        const li = document.createElement('li');
-
-        if(result !== 'undefined') {
-            li.textContent = result;
-            fragment.appendChild(li);
-        };
-
-        ol.appendChild(fragment);
-
-        const sum = +numberOne.value + +numberTwo.value;
-        const value = input.value;
-        if (sum != value) {
-            li.classList.add('incorrect');
-            li.classList.remove('correct');
-        } else {
-            li.classList.add('correct');
-            li.classList.remove('incorrect')
-        };
-    };
-
-    document.getElementById('input').value = '';
+    input.value = '';
 
     if (input.value === '') {
         next.classList.add('non-active');
     };
-
-    const value_count1 = document.getElementById('value1');
-    value_count1.innerText = document.getElementsByClassName('correct').length;
-    const value_count2 = document.getElementById('value2');
-    value_count2.innerText = document.getElementsByClassName('incorrect').length;
 };
 
-function input() {
-    const next = document.getElementById('next');
-    const input = document.getElementById('input');
+document.getElementById('input').onkeypress = function (e) {
+    if (e.keyCode == 13 && input.value !== '') {
+        document.getElementById('next').click();
+    };
+};
 
+function color() {
     if (typeof input.innerText !== 'undefined') {
         next.classList.remove('non-active');
-    }
-    if (input.value === '') {
+    } else {
         next.classList.add('non-active');
     };
 };
-

@@ -1,3 +1,23 @@
+li {
+    padding: 10px;
+    border: transparent;
+    max-width: 8rem;
+    border-radius: 4px;
+    margin: 0 0 0.3rem 0;
+    position: relative;
+    min-width: 130px;
+    text-align: left;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    margin: 0 auto;
+    height: 98vh;
+    max-width: 46vw;
+}
+
 .start__container {
     color: #fff;
     justify-content: center;
@@ -105,9 +125,25 @@
 }
 
 .math {
-    padding: 30px 30px;
+    padding: 2rem 10rem;
     display: flex;
     justify-content: space-evenly;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.input {
+    width: 3rem;
+    border: none;
+    border-bottom: solid;
+    outline: none;
+    background-color: transparent;
+    font-style: italic;
+    font-size: 1.5rem;
+    padding: 0;
+    position: relative;
+    top: -1px;
+    text-align: center;
 }
 
 .input::-webkit-inner-spin-button {
@@ -119,19 +155,46 @@
     pointer-events: none;
 }
 
-.div {
-    color: #fff;
+.results__wrapper {
+    position: relative;
+    flex-flow: column;
+    display: none;
+    top: 10%;
+}
+
+.result {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.result__title {
+    font-size: 2.5rem;
+}
+
+.answers {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.result__count {
+    position: relative;
+    align-self: center;
+    text-align: left;
+}
+
+.result__text {
+    font-weight: bold;
 }
 
 .incorrect {
-    color: red;
+    background: rgba(177, 0, 0, 0.589);
+    box-shadow: -30px 0px 0 rgb(177, 0, 0, 0.589);
+    color: black;
 }
 
 .correct {
-    color: rgb(0, 255, 0);
-}
-
-.answer__item {
-    content: "\a";
-  white-space: pre;
+    background: rgba(0, 143, 36, 0.589);
+    box-shadow: -30px 0px 0 rgba(0, 143, 36, 0.589);
+    color: black;
 }
