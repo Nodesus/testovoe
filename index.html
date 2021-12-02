@@ -40,8 +40,8 @@
         <div id="second__modal" class="modal main__modal second__modal">
             <div class="modal__content modal__content-second">
                 <p>Вы уверены, что хотите завершить тестирование?</p>
-                <button id="yes__btn" class="btn yes__btn">Да</button>
-                <button id="no__btn" class="btn no__btn">Нет</button>
+                <button onclick="end()" id="yes__btn" class="btn yes__btn">Да</button>
+                <button onclick="cont()" id="no__btn" class="btn no__btn">Нет</button>
             </div>
         </div>
 
@@ -52,7 +52,7 @@
                 </ol>
             </div>
             <div class="result__count">
-                <div class="result__value"><span class="result__text">Верных:  </span> <span id="firstValueNum"></span>
+                <div class="result__value"><span class="result__text">Верных:    </span> <span id="firstValueNum"></span>
                 </div>
                 <div class="result__value"><span class="result__text">Неверных:</span> <span id="secondValueNum"></span>
                 </div>

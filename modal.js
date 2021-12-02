@@ -6,7 +6,6 @@ const yes = document.getElementById('yes__btn');
 const no = document.getElementById('no__btn');
 const resultsWrapper = document.getElementById('resultsWrapper');
 
-
 start.onclick = function modact() {
     modal.style.display = 'flex';
 };
@@ -14,15 +13,22 @@ start.onclick = function modact() {
 choose.onclick = function () {
     second_modal.style.display = 'flex';
     start__btn.style.display = 'none';
-    resultsWrapper.style.display = 'flex';
 };
 
-yes.onclick = function end() {
-    modal.style.display = 'none';
-    second_modal.style.display = 'none';
+const promise = new Promise((resolve, reject) => {
 
-};
+    yes.onclick = function end() {
+        modal.style.display = 'none';
+        second_modal.style.display = 'none';
+        resultsWrapper.style.display = 'flex';
 
-no.onclick = function cont() {
-    second_modal.style.display = 'none';
-};
+        return resolve(1);
+    };
+
+    no.onclick = function cont() {
+        second_modal.style.display = 'none';
+        return reject(2);
+    };
+});
+
+console.log(promise);

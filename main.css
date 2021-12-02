@@ -15,7 +15,7 @@ li {
     text-align: center;
     margin: 0 auto;
     height: 98vh;
-    max-width: 46vw;
+    max-width: 20rem;
 }
 
 .start__container {
@@ -165,6 +165,9 @@ li {
 .result {
     position: relative;
     margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 6px;
+    max-width: 20rem;
 }
 
 .result__title {
