@@ -9,6 +9,7 @@ next.addEventListener('click', btn, false);
 
 if (input.value.length === 0) {
     next.classList.add('non-active')
+    next.setAttribute('disabled', 'disabled');
 };
 
 function math(firstNum, secondNum) {
@@ -16,13 +17,20 @@ function math(firstNum, secondNum) {
     secondNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
 };
 
+function sum(firstValueNum, secondValueNum) {
+    firstValueNum.innerText = document.getElementsByClassName('correct').length;
+    secondValueNum.innerText = document.getElementsByClassName('incorrect').length;
+}
+
 input.oninput = function color() {
     if (input.value.length === 0) {
         next.classList.add('non-active')
+        next.setAttribute('disabled', 'disabled');
     };
 
     if (input.value.length !== 0) {
         next.classList.remove('non-active');
+        next.removeAttribute('disabled', 'disabled');
     };
 };
 
@@ -54,18 +62,23 @@ next.onclick = function () {
         li.classList.add('correct');
         li.classList.remove('incorrect')
     };
+
+    let nextPromise = new Promise((resolve) => {
+        resolve('Продолжить ' + document.querySelectorAll('li').length);
+    });
+
+    console.log(nextPromise);
 };
 
 function btn() {
     math(firstNum, secondNum);
-
-    firstValueNum.innerText = document.getElementsByClassName('correct').length;
-    secondValueNum.innerText = document.getElementsByClassName('incorrect').length;
+    sum(firstValueNum, secondValueNum);
 
     input.value = '';
 
     if (input.value === '') {
         next.classList.add('non-active');
+        next.setAttribute('disabled', 'disabled');
     };
 };
 

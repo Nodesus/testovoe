@@ -14,20 +14,27 @@ start.onclick = function () {
 choose.onclick = function () {
     second_modal.style.display = 'flex';
     start__btn.style.display = 'none';
+
+    let choosePromise = new Promise((resolve) => {
+        resolve('Завершить? ' + document.querySelectorAll('li').length);
+    });
+
+    console.log(choosePromise);
 };
 
-const promise = new Promise((resolve) => {
-    yes.onclick = function yesClick() {
-        modal.style.display = 'none';
-        second_modal.style.display = 'none';
-        resultsWrapper.style.display = 'flex';
+yes.onclick = function () {
+    modal.style.display = 'none';
+    second_modal.style.display = 'none';
+    resultsWrapper.style.display = 'flex';
 
-        return resolve('Готово');
-    };
-});
+    let yesPromise = new Promise((resolve) => {
+        resolve('Тест завершен');
+    });
+
+    console.log(yesPromise);
+};
+
 
 no.onclick = function () {
     second_modal.style.display = 'none';
 };
-
-console.log(promise);
