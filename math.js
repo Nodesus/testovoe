@@ -26,7 +26,7 @@ input.oninput = function color() {
     };
 };
 
-document.getElementById('next').onclick = function () {
+next.onclick = function () {
     firstNum.value = firstNum.innerText;
     secondNum.value = secondNum.innerText;
 
@@ -69,8 +69,8 @@ function btn() {
     };
 };
 
-document.getElementById('input').onkeypress = function (e) {
-    if (e.keyCode == 13 && input.value !== '') {
-        document.getElementById('next').click();
+input.onkeypress = function (e) {
+    if (e.keyCode == 13 && input.value.length !== 0) {
+        next.click();
     };
 };
