@@ -6,7 +6,7 @@ const yes = document.getElementById('yes__btn');
 const no = document.getElementById('no__btn');
 const resultsWrapper = document.getElementById('resultsWrapper');
 
-start.onclick = function modact() {
+start.onclick = function () {
     modal.style.display = 'flex';
     math(firstNum, secondNum);
 };

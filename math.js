@@ -7,21 +7,23 @@ const secondValueNum = document.getElementById('secondValueNum');
 
 next.addEventListener('click', btn, false);
 
+if (input.value.length === 0) {
+    next.classList.add('non-active')
+};
+
 function math(firstNum, secondNum) {
     firstNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
     secondNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
 };
 
-if (input.value === '') {
-    next.classList.add('non-active')
-};
-
 input.oninput = function color() {
-    if (typeof input.innerText !== '') {
+    if (input.value.length === 0) {
+        next.classList.add('non-active')
+    };
+
+    if (input.value.length !== 0) {
         next.classList.remove('non-active');
-    } else if (typeof input.innerText === '') {
-        next.classList.add('non-active');
-    }
+    };
 };
 
 document.getElementById('next').onclick = function () {
