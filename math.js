@@ -11,7 +11,15 @@ firstNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
 secondNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
 
 if (input.value === '') {
-    next.classList.add('non-active');
+    next.classList.add('non-active')
+};
+
+input.oninput = function color() {
+    if (typeof input.innerText !== '') {
+        next.classList.remove('non-active');
+    } else if (typeof input.innerText === '') {
+        next.classList.add('non-active');
+    }
 };
 
 document.getElementById('next').onclick = function () {
@@ -61,13 +69,5 @@ function btn() {
 document.getElementById('input').onkeypress = function (e) {
     if (e.keyCode == 13 && input.value !== '') {
         document.getElementById('next').click();
-    };
-};
-
-function color() {
-    if (typeof input.innerText !== 'undefined') {
-        next.classList.remove('non-active');
-    } else {
-        next.classList.add('non-active');
     };
 };
