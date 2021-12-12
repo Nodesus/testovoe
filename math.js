@@ -7,8 +7,10 @@ const secondValueNum = document.getElementById('secondValueNum');
 
 next.addEventListener('click', btn, false);
 
-firstNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
-secondNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
+function math(firstNum, secondNum) {
+    firstNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
+    secondNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
+};
 
 if (input.value === '') {
     next.classList.add('non-active')
@@ -53,8 +55,7 @@ document.getElementById('next').onclick = function () {
 };
 
 function btn() {
-    firstNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
-    secondNum.innerText = Math.floor(Math.random() * (101 - 1) + 1);
+    math(firstNum, secondNum);
 
     firstValueNum.innerText = document.getElementsByClassName('correct').length;
     secondValueNum.innerText = document.getElementsByClassName('incorrect').length;

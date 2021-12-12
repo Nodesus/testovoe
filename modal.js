@@ -8,6 +8,7 @@ const resultsWrapper = document.getElementById('resultsWrapper');
 
 start.onclick = function modact() {
     modal.style.display = 'flex';
+    math(firstNum, secondNum);
 };
 
 choose.onclick = function () {
@@ -15,20 +16,18 @@ choose.onclick = function () {
     start__btn.style.display = 'none';
 };
 
-const promise = new Promise((resolve, reject) => {
-
-    yes.onclick = function end() {
+const promise = new Promise((resolve) => {
+    yes.onclick = function yesClick() {
         modal.style.display = 'none';
         second_modal.style.display = 'none';
         resultsWrapper.style.display = 'flex';
 
-        return resolve(1);
-    };
-
-    no.onclick = function cont() {
-        second_modal.style.display = 'none';
-        return reject(2);
+        return resolve('Готово');
     };
 });
+
+no.onclick = function () {
+    second_modal.style.display = 'none';
+};
 
 console.log(promise);
